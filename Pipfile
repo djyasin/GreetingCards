@@ -9,6 +9,7 @@ django-extensions = "*"
 djoser = "*"
 django-environ = "*"
 psycopg2-binary = "*"
+django-toggle-m2m = "*"
 
 [dev-packages]
 
