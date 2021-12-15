@@ -6,7 +6,7 @@ from django_toggle_m2m.toggle import ToggleManyToMany
 
 # Create your models here.
 #user model
-class User(AbstractUser):
+class CustomUser(AbstractUser):
     def __repr__(self):
         return f"<User username={self.username}>"
 
@@ -30,7 +30,7 @@ class Card(models.Model):
     sender = models.CharField(max_length=250)
     recipient = models.CharField(max_length=250)
     favorited_by = models.ManyToManyField(
-        User, related_name="favorite_cards", blank=True)
+        CustomUser, related_name="favorite_cards", blank=True)
     date_created = models.DateTimeField(default=timezone.now, null=True)
     author = models.CharField(max_length=250)
     #image = models.image(freakin huge)
