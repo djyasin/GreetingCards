@@ -1,3 +1,7 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin, User
+from .models import Tag, Card, CustomUser
 
-# Register your models here.
+admin.site.register(Card)
+admin.site.register(Tag)
+admin.site.register(CustomUser, UserAdmin)
