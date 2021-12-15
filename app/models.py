@@ -5,7 +5,7 @@ from django_toggle_m2m.toggle import ToggleManyToMany
 
 
 # Create your models here.
-#user model
+# user model profile image?
 class CustomUser(AbstractUser):
     def __repr__(self):
         return f"<User username={self.username}>"
@@ -14,7 +14,7 @@ class CustomUser(AbstractUser):
         return self.username
 
 
-#tag model
+# tag model
 class Tag(models.Model):
     tag = models.CharField(max_length=100, unique=True)
 
@@ -22,11 +22,11 @@ class Tag(models.Model):
         return self.tag
 
 
-#card model many to many? 
+# card model many to many? 
 class Card(models.Model):
     title = models.CharField(max_length=250)
-    message = models.TextField(max_length=500)
-    custom_message = models.TextField(max_length=500)
+    outer_message = models.TextField(max_length=500)
+    inner_message = models.TextField(max_length=500)
     sender = models.CharField(max_length=250)
     recipient = models.CharField(max_length=250)
     favorited_by = models.ManyToManyField(
@@ -36,7 +36,12 @@ class Card(models.Model):
     #image = models.image(freakin huge)
     public = models.BooleanField(default=True)
     tags = models.ManyToManyField(to=Tag, related_name="cards", blank=True)
-
+    # outer color
+    # inner color
+    # outer message color (font color)
+    # inner message color (font color)
+    # outer font 
+    # inner font
 
 
 
