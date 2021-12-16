@@ -10,6 +10,8 @@ djoser = "*"
 django-environ = "*"
 psycopg2-binary = "*"
 django-toggle-m2m = "*"
+djangorestframework = "==3.12.0"
+pygments = "==2.5.2"
 
 [dev-packages]
 

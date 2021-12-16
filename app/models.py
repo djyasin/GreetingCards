@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 from django_toggle_m2m.toggle import ToggleManyToMany
 
 
+
 # Create your models here.
 # user model profile image?
 class CustomUser(AbstractUser):
@@ -36,6 +37,12 @@ class Card(models.Model):
     #image = models.image(freakin huge)
     public = models.BooleanField(default=True)
     tags = models.ManyToManyField(to=Tag, related_name="cards", blank=True)
+    
+    class Meta:
+        ordering = ['-date_created']
+
+        def __str__(self):
+            return self.title
     # outer color
     # inner color
     # outer message color (font color)
