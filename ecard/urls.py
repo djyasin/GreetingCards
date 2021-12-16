@@ -25,6 +25,7 @@ urlpatterns = [
     path('', app_views.CardList.as_view(), name='home'),
     # path('ecard/', app_views.CardList.as_view()),
     path('ecard/<int:pk>/', app_views.CardDetail.as_view(), name='card_detail'),
+    path('ecard/delete_card/<int:pk>', app_views.DeleteCard.as_view(), name='delete_card'),
 ]
     # path("", core_views.recipe_list, name="homepage"),
     # path('', habit_tracker_views.home, name='home'),
