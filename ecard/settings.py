@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import django_on_heroku
 import environ
 import os
 
@@ -32,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
+DEBUG = False
 
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".herokuapp.com", ".localhost", "127.0.0.1"]
 
 
 # Application definition
