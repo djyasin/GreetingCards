@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Card, Tag, CustomUser
 from .serializers import CardSerializer, CustomUserCreateSerializer, CustomUserSerializer, TagSerializer 
-from rest_framework.generics import CreateAPIView, ListCreateAPIView, ListAPIView, RetrieveAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView, ListAPIView, RetrieveDestroyAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView
 
 
 # Create your views here.
@@ -14,6 +14,7 @@ class CardList(generics.ListCreateAPIView):
 class CardDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+
 
 
 class UserCreatedList(generics.ListCreateAPIView):
@@ -35,3 +36,8 @@ class AddCard(CreateAPIView):
 class EditCard(RetrieveUpdateDestroyAPIView):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+
+class DeleteCard(RetrieveDestroyAPIView):
+    queryset = Card.objects.all()
+    serializer_class = CardSerializer
+
