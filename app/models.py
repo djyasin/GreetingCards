@@ -40,23 +40,22 @@ class Card(models.Model):
     favorited_by = models.ManyToManyField(
         CustomUser, related_name="favorite_cards", blank=True)
     date_created = models.DateTimeField(default=timezone.now, null=True)
-    author = models.CharField(max_length=250)
-    #image = models.image(freakin huge)
+#image = models.image(freakin huge)
     public = models.BooleanField(default=True)
     tags = models.ManyToManyField(to=Tag, related_name="cards", blank=True)
-    
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='cards')
     class Meta:
         ordering = ['-date_created']
 
-    def save(self, *args, **kwargs):
+    # def save(self, *args, **kwargs):
         
-        lexer = get_lexer_by_name(self.language)
-        linenos = 'table' if self.linenos else False
-        options = {'title': self.title} if self.title else {}
-        formatter = HtmlFormatter(style=self.style, linenos=linenos,
-                                  full=True, **options)
-        self.highlighted = highlight(self.code, lexer, formatter)
-        super(Card, self).save(*args, **kwargs)
+    #     lexer = get_lexer_by_name(self.language)
+    #     linenos = 'table' if self.linenos else False
+    #     options = {'title': self.title} if self.title else {}
+    #     formatter = HtmlFormatter(style=self.style, linenos=linenos,
+    #                               full=True, **options)
+    #     self.highlighted = highlight(self.code, lexer, formatter)
+    #     super(Card, self).save(*args, **kwargs)
         def __str__(self):
             return self.title
     # outer color
