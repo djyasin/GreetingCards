@@ -14,3 +14,21 @@ class CardList(generics.ListCreateAPIView):
 class CardDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+
+
+class UserCreatedList(generics.ListCreateAPIView):
+        serializer_class = CardSerializer
+
+        def get_queryset(self):
+            user = self.request.user
+            return Card.objects.filter(author=user)
+
+
+class AddCard(CreateAPIView):
+    queryset = Card.objects.all()
+    serializer_class = CardSerializer
+
+
+class EditCard(RetrieveUpdateDestroyAPIView):
+    queryset = Card.objects.all()
+    serializer_class = CardSerializer
