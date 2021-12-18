@@ -39,3 +39,6 @@ class DeleteCard(RetrieveDestroyAPIView):
 
 class NewCard(CreateAPIView):
     serializer_class = CardSerializer
+
+class NewUser(CreateAPIView):
+    serializer_class = CustomUserCreateSerializer
