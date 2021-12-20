@@ -33,6 +33,8 @@ urlpatterns = [
     path('ecard/create/',app_views.NewCard.as_view(), name="create_card"),
     path('ecard/new_user', app_views.NewUser.as_view(), name='new_user'),
     path('ecard/user_list', app_views.UserList.as_view(), name='user_list'),
-    path('ecard/user_detail/<int:pk>/', app_views.UserDetail.as_view(), name='user_detail')
+    path('ecard/user_detail/<int:pk>/', app_views.UserDetail.as_view(), name='user_detail'),
+    path('ecard/follow/<int:pk>/', app_views.FollowView.as_view(), name='follow_user'),
+    path('ecard/unfollow/<int:pk>/', app_views.FollowView.as_view(), name='unfollow_user'),
 ]
 

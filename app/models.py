@@ -1,5 +1,6 @@
 from django.utils import timezone
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django_toggle_m2m.toggle import ToggleManyToMany
 from pygments import highlight 
@@ -15,6 +16,8 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 # Create your models here.
 # user model profile image?
 class CustomUser(AbstractUser):
+    following = models.ManyToManyField("CustomUser", related_name='followers', blank=True)
+
     def __repr__(self):
         return f"<User username={self.username}>"
 
@@ -65,5 +68,6 @@ class Card(models.Model):
     # outer font 
     # inner font
 
-
+    
+    
 
