@@ -31,6 +31,7 @@ urlpatterns = [
     path('ecard/card_detail/<int:pk>/', app_views.CardDetail.as_view(), name='card_detail'),
     path('ecard/delete_card/<int:pk>', app_views.DeleteCard.as_view(), name='delete_card'),
     path('ecard/create/',app_views.NewCard.as_view(), name="create_card"),
-    path('ecard/new_user', app_views.NewUser.as_view(), name='new_user')
+    path('ecard/new_user', app_views.NewUser.as_view(), name='new_user'),
+    # path('ecard/user_list', app_views.UserList.as_view(), name='user_list')
 ]
 
