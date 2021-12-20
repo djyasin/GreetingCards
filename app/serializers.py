@@ -27,11 +27,9 @@ class CustomUserCreateSerializer(serializers.ModelSerializer):
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
-    photo = serializers.ImageField()
-
     class Meta:
         model = CustomUser
-        fields = ("pk", "username", "photo")
+        fields = ("username", "email", "password")
 
 
 class TagSerializer(serializers.ModelSerializer):
