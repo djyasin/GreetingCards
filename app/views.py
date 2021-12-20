@@ -39,3 +39,10 @@ class DeleteCard(RetrieveDestroyAPIView):
 
 class NewCard(CreateAPIView):
     serializer_class = CardSerializer
+
+class NewUser(CreateAPIView):
+    serializer_class = CustomUserCreateSerializer
+
+# class UserList(RetrieveDestroyAPIView):
+#     queryset = CustomUser.objects.all()
+#     serializer_class = CustomUserSerializer
