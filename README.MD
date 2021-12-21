@@ -23,3 +23,4 @@ https://greeterycards.herokuapp.com/	/auth/users/reset_password/		Reset Password
 https://greeterycards.herokuapp.com/	/ecard/create/		Creates a New Card
 https://greeterycards.herokuapp.com/	/auth/token/logout/		User Log out
 https://greeterycards.herokuapp.com/	/ecard/follow/<id>/	-	Unfollow or Follow [] Will Indicate User id
+https://greeterycards.herokuapp.com/	ecard/favorited_by/<id>/		User Favorite or Unfavorite Cards
