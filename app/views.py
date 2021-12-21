@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Card, Tag, CustomUser
-from .serializers import CardSerializer, CustomUserCreateSerializer, CustomUserSerializer, TagSerializer 
+from .models import Card, Tag, CustomUser 
+from .serializers import CardSerializer, CustomUserCreateSerializer, CustomUserSerializer, TagSerializer
 from rest_framework.generics import RetrieveAPIView,  CreateAPIView, ListCreateAPIView, ListAPIView, RetrieveDestroyAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
 from rest_framework import viewsets
 from rest_framework import status
@@ -56,3 +56,7 @@ class UserDetail(RetrieveAPIView):
 class FollowView(UpdateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
+
+class FavoritedView(RetrieveUpdateDestroyAPIView):
+    queryset = Card.objects.all()
+    serializer_class = CardSerializer
