@@ -37,3 +37,9 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = ('tag')
+
+# class FavoritedSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+#         model = Card
+#         fields = ('favorited_by')
