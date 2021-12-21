@@ -16,6 +16,12 @@ class CardSerializer(serializers.ModelSerializer):
         'author',
         'public',
         'tags',
+        'outer_color',
+        'inner_color',
+        'outer_message_color',
+        'inner_message_color',
+        'outer_font',
+        'inner_font',
         )
 
 
@@ -38,8 +44,4 @@ class TagSerializer(serializers.ModelSerializer):
         model = Tag
         fields = ('tag')
 
-# class FavoritedSerializer(serializers.ModelSerializer):
 
-#     class Meta:
-#         model = Card
-#         fields = ('favorited_by')
