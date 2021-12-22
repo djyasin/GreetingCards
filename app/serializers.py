@@ -22,6 +22,7 @@ class CardSerializer(serializers.ModelSerializer):
         'inner_message_color',
         'outer_font',
         'inner_font',
+        'outer_image',
         )
 
 

@@ -50,8 +50,7 @@ class Card(models.Model):
     outer_message_color = models.CharField(max_length=20, null=True)
     inner_message_color = models.CharField(max_length=20, null=True)
     outer_font = models.CharField(max_length=200, null=True)
-    inner_font = models.CharField(max_length=200, null=True)
-    
+    outer_image = models.URLField(max_length=200, null=True)
     class Meta:
         ordering = ['-date_created']
 
