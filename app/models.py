@@ -35,10 +35,10 @@ class Tag(models.Model):
 
 class Card(models.Model):
     title = models.CharField(max_length=250)
-    outer_message = models.TextField(max_length=500)
-    inner_message = models.TextField(max_length=500)
-    sender = models.CharField(max_length=250)
-    recipient = models.CharField(max_length=250)
+    outer_message = models.TextField(max_length=500, null=True)
+    inner_message = models.TextField(max_length=500, null=True)
+    sender = models.CharField(max_length=250, null=True)
+    recipient = models.CharField(max_length=250, null=True)
     favorited_by = models.ManyToManyField(
         CustomUser, related_name="favorite_cards", blank=True)
     date_created = models.DateTimeField(default=timezone.now, null=True)
